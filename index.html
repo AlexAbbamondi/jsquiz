@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>online test simplified</title>
+<style type="text/css">
+	body {
+		background-image: url("https://wallpapercave.com/wp/eTgd2o2.jpg");
+	}
+	h1, h2 {
+		text-align: center;
+		color: #7dce94;
+	}
+	h1 {
+		margin-top: 300px;
+	}
+	button {
+		background-color: #7dce94;
+		color: #3d3d3f;
+		display: block;
+  		max-width: 300px;
+  		margin: auto;
+  		cursor: pointer;
+	}
+	button:hover {
+		background-color: #3d3d3f;
+		color: #7dce94;
+	}
+</style>
+<script>
+
+var response=""; //a box to hold the current answer/response to current question
+var points = 0; //a counter
+	
+var q1 = "What company developed Javascript?";
+var a1 = "NETSCAPE";
+
+var q2 = "Using Javascript operator precedence,\n what is the result of the following expression? 2 + 4 * 6";
+var a2 = 26;
+
+var q3 = "With what object-oriented programming language\n is Javascript often compared and confused?";
+var a3 = "JAVA";
+
+var q4 = "Changing the datatype of a var is called ______.";
+var a4 = "CASTING";
+
+var q5 = "Event bubbling detects first the ______.";
+var a5 = "INNERMOST";
+
+var q6 = "Global variables are declared ______ any block.";
+var a6 = "OUTSIDE";
+	
+	
+	
+function takeTest() {
+	
+//show q1///////////////////////////////////	
+response = prompt(q1,""); //prompt q1 with empty box. Input response into response.
+(response.toUpperCase() == a1) ? points++:points+=0;
+//transform response to uppercase. is it the same as the correct answer? if yes, give them a point. if not, keep the same.
+//alert(points);
+
+/*
+//long syntax of if	statement
+   if(response.toUpperCase() == a1){
+     points++ ;
+   }else{
+   points+=0;
+   }	
+*/	
+	
+//show q2///////////////////////////////////	
+response = prompt(q2,"");
+(response== a2) ? points++:points+=0; //compare the response to 26.
+//alert(points);	
+	
+//show q3///////////////////////////////////	
+response = prompt(q3,"");
+(response.toUpperCase() == a3) ? points++:points+=0; //compare response against JAVA
+//alert(points);
+
+//show q4///////////////////////////////////
+response = prompt(q4,"");
+(response.toUpperCase() == a4) ? points++:points+=0; //compare the response to casting.
+//alert(points);
+
+
+//show q5///////////////////////////////////
+response = prompt(q5,"");
+(response.toUpperCase() == a5) ? points++:points+=0; //compare the response to innermost.
+//alert(points);
+
+//show q6///////////////////////////////////
+response = prompt(q6,"");
+(response.toUpperCase() == a6) ? points++:points+=0; //compare the response to outside.
+//alert(points);
+	
+//now show result	
+var myEndMessage="You answered a total of " + points + " questions out of 6 correctly.";
+var myGrade="Your grade is "+(points/6*100).toFixed(0)+" out of 100";
+	
+document.getElementById("showpoints").innerHTML=myEndMessage;
+//hey document put myEndMessage into the id showpoints
+document.getElementById("showgrade").innerHTML=myGrade;
+//hey document put mygrade into the id showgrade
+points = 0;	
+	
+} //end takeTest
+
+	
+	
+	
+	
+</script>
+
+</head>
+
+<body>
+
+<h1>Online exam simplified</h1>
+
+<h2>Take an online quiz.</h2>
+
+	<button onclick="takeTest();">Start Quiz!</button>
+	
+<h2 id="showpoints"></h2>
+<h1 id="showgrade"></h1>
+</body>
+</html>
